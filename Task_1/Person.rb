@@ -37,26 +37,11 @@ class Person
   end
 
   def birth_date=(new_birth_date)
-    if valid_birth_date?(new_birth_date)
-      @birth_date = Date.parse(new_birth_date)
+    birth_date = Date.parse(new_birth_date)
+    if valid_birth_date?(birth_date)
+      @birth_date = birth_date
     else
       raise ArgumentError, "Invalid birth date."
     end
-  end
-
-  def valid?
-    puts "\n"
-
-    valid_first_name = valid_name?(@first_name)
-    valid_last_name = valid_name?(@last_name)
-    valid_inn = valid_inn?(@inn)
-    valid_birthdate = valid_birth_date?(@birth_date)
-
-    puts "First name: #{@first_name} | Is valid: #{valid_first_name}"
-    puts "Last name: #{@last_name} | Is valid: #{valid_last_name}"
-    puts "INN: #{@inn} | Is valid: #{valid_inn}"
-    puts "Birthdate: #{@birth_date} | Is valid: #{valid_birthdate}"
-
-    puts "Is valid: #{valid_first_name && valid_last_name && valid_inn && valid_birthdate}"
   end
 end

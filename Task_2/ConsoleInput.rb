@@ -1,6 +1,4 @@
-VALIDATION_PATH = #'./Task_1.Validation'
-'/home/vadimir/RubymineProjects/Ruby_Practice/Task_1/Validation.rb'
-require VALIDATION_PATH
+require_relative '../Task_1/Validation'
 
 module ConsoleInput
   include Validation
